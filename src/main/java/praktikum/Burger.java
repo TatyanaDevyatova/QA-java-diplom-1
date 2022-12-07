@@ -44,8 +44,7 @@ public class Burger {
         StringBuilder receipt = new StringBuilder(String.format("(==== %s ====)%n", bun.getName()));
 
         for (Ingredient ingredient : ingredients) {
-            receipt.append(String.format("= %s %s =%n", ingredient.getType().toString().toLowerCase(),
-                    ingredient.getName()));
+            receipt.append(String.format("= %s %s =%n", ingredient.getType().toString().toLowerCase(), ingredient.getName()));
         }
 
         receipt.append(String.format("(==== %s ====)%n", bun.getName()));
@@ -53,5 +52,4 @@ public class Burger {
 
         return receipt.toString();
     }
-
 }
