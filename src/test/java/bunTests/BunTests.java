@@ -7,10 +7,10 @@ import praktikum.Bun;
 import static org.junit.Assert.assertEquals;
 
 public class BunTests {
-    Bun bun;
+    private Bun bun;
 
-    String bunName = "potato bun";
-    float bunPrice = 1.05f;
+    private final String bunName = "potato bun";
+    private final float bunPrice = 1.05f;
 
     @Before
     public void getBun() {

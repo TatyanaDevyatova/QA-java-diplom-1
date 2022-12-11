@@ -8,10 +8,10 @@ import praktikum.IngredientType;
 import static org.junit.Assert.assertEquals;
 
 public class IngredientTests {
-    Ingredient ingredient;
+    private Ingredient ingredient;
 
-    String ingredientName = "beef cutlet";
-    float ingredientPrice = 20.01f;
+    private final String ingredientName = "beef cutlet";
+    private final float ingredientPrice = 20.01f;
 
     @Before
     public void getBun() {

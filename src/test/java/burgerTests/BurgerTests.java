@@ -19,27 +19,24 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BurgerTests {
-    Burger burger;
+    private Burger burger;
 
     @Mock
-    Bun bun;
+    private Bun bun;
     @Mock
-    Ingredient fillingIngredient;
+    private Ingredient fillingIngredient;
     @Mock
-    Ingredient sauceIngredient;
+    private Ingredient sauceIngredient;
 
-    String bunName = "potato bun";
-    float bunPrice = 0.05f;
-
-    IngredientType fillingIngredientType = IngredientType.FILLING;
-    String fillingIngredientName = "beef cutlet";
-    float filingIngredientPrice = 1f;
-
-    IngredientType sauceIngredientType = IngredientType.SAUCE;
-    String sauceIngredientName = "cranberry sauce";
-    float sauceIngredientPrice = 0.05f;
-
-    float expectedBurgerPrice = 1.15f;
+    private final String bunName = "potato bun";
+    private final float bunPrice = 0.05f;
+    private final IngredientType fillingIngredientType = IngredientType.FILLING;
+    private final String fillingIngredientName = "beef cutlet";
+    private final float filingIngredientPrice = 1f;
+    private final IngredientType sauceIngredientType = IngredientType.SAUCE;
+    private final String sauceIngredientName = "cranberry sauce";
+    private final float sauceIngredientPrice = 0.05f;
+    private final float expectedBurgerPrice = 1.15f;
 
     @Before
     public void setUp() {
