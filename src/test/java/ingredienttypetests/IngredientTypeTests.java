@@ -1,4 +1,4 @@
-package ingredientTests;
+package ingredienttypetests;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,19 +6,19 @@ import org.junit.runners.Parameterized;
 import praktikum.Ingredient;
 import praktikum.IngredientType;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-public class IngredientGetTypeParametrizedTest {
+public class IngredientTypeTests {
     private final IngredientType type;
     private final IngredientType expectedType;
 
-    public IngredientGetTypeParametrizedTest(IngredientType type, IngredientType expectedType) {
+    public IngredientTypeTests(IngredientType type, IngredientType expectedType) {
         this.type = type;
         this.expectedType = expectedType;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} | {1}")
     public static Object[][] getBunData() {
         return new Object[][]{
                 {IngredientType.FILLING, IngredientType.FILLING},
@@ -33,7 +33,8 @@ public class IngredientGetTypeParametrizedTest {
         IngredientType actualType = ingredient.getType();
 
         // Assert
-        assertEquals("Было получено: " + actualType + ", вместо: " + expectedType, expectedType, actualType);
+        assertEquals("Было получено неверное строковое значение типа ингредиента", Enum.valueOf(IngredientType.class, expectedType.name()), actualType);
+        assertEquals("Был получен неверный тип ингредиента", expectedType, actualType);
     }
 }
 

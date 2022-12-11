@@ -1,4 +1,4 @@
-package burgerTests;
+package burgertests;
 
 import org.junit.After;
 import org.junit.Before;
@@ -62,8 +62,8 @@ public class BurgerTests {
         float actualPrice = burger.bun.getPrice();
 
         // Assert
-        assertEquals("Было получено: " + actualName + ", вместо: " + bunName, bunName, actualName);
-        assertEquals("Было получено: " + actualPrice + ", вместо: " + bunPrice, bunPrice, actualPrice, 0);
+        assertEquals("Было получено неверное имя булки", bunName, actualName);
+        assertEquals("Была получена неверная цена булки", bunPrice, actualPrice, 0);
     }
 
     @Test
@@ -78,9 +78,9 @@ public class BurgerTests {
         List<Ingredient> actualIngredients = burger.ingredients;
 
         // Assert
-        assertEquals("Было получено: " + actualSize + ", вместо: " + expectedSize, expectedSize, actualSize);
+        assertEquals("Было получено неверное количество ингредиентов", expectedSize, actualSize);
         assertTrue(burger.ingredients.contains(fillingIngredient));
-        assertEquals("Было получено: " + actualIngredients + ", вместо: " + expectedIngredients, actualIngredients.toString(), expectedIngredients.toString());
+        assertEquals("Был получен неверный список ингредиентов", actualIngredients.toString(), expectedIngredients.toString());
     }
 
     @Test
@@ -98,9 +98,9 @@ public class BurgerTests {
         List<Ingredient> actualIngredients = burger.ingredients;
 
         // Assert
-        assertEquals("Было получено: " + actualSize + ", вместо: " + expectedSize, expectedSize, actualSize);
+        assertEquals("Было получено неверное количество ингредиентов", expectedSize, actualSize);
         assertTrue(burger.ingredients.contains(sauceIngredient));
-        assertEquals("Было получено: " + actualIngredients + ", вместо: " + expectedIngredients, actualIngredients.toString(), expectedIngredients.toString());
+        assertEquals("Был получен неверный список ингредиентов", actualIngredients.toString(), expectedIngredients.toString());
     }
 
     @Test
@@ -120,9 +120,9 @@ public class BurgerTests {
         List<Ingredient> actualIngredients = burger.ingredients;
 
         // Assert
-        assertEquals("Было получено: " + actualSize + ", вместо: " + expectedSize, expectedSize, actualSize);
-        assertEquals("Было получено: " + actualIndex + ", вместо: " + expectedIndex, expectedIndex, actualIndex);
-        assertEquals("Было получено: " + actualIngredients + ", вместо: " + expectedIngredients, actualIngredients.toString(), expectedIngredients.toString());
+        assertEquals("Было получено неверное количество ингредиентов", expectedSize, actualSize);
+        assertEquals("Был получен неверный индекс ингредиента", expectedIndex, actualIndex);
+        assertEquals("Был получен неверный список ингредиентов", actualIngredients.toString(), expectedIngredients.toString());
     }
 
     @Test
@@ -140,7 +140,7 @@ public class BurgerTests {
         float actualPrice = burger.getPrice();
 
         // Assert
-        assertEquals("Было получено: " + actualPrice + ", вместо: " + expectedBurgerPrice, expectedBurgerPrice, actualPrice, 0);
+        assertEquals("Была получена неверная цена бургера", expectedBurgerPrice, actualPrice, 0);
     }
 
     @Test
@@ -172,6 +172,6 @@ public class BurgerTests {
         String actualReceipt = burger.getReceipt();
 
         // Assert
-        assertEquals("Было получено: " + actualReceipt + ", вместо: " + expectedReceipt, expectedReceipt.toString(), actualReceipt);
+        assertEquals("Был получен неверный рецепт бургера", expectedReceipt.toString(), actualReceipt);
     }
 }

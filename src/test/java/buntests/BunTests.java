@@ -1,4 +1,4 @@
-package bunTests;
+package buntests;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class BunTests {
         String actualName = bun.getName();
 
         // Assert
-        assertEquals("Было получено: " + actualName + ", вместо: " + bunName, bunName, actualName);
+        assertEquals("Было получено неверное имя булки", bunName, actualName);
     }
 
     @Test
@@ -32,6 +32,6 @@ public class BunTests {
         float actualPrice = bun.getPrice();
 
         // Assert
-        assertEquals("Было получено: " + actualPrice + ", вместо: " + bunPrice, bunPrice, actualPrice, 0);
+        assertEquals("Была получена неверная цена булки", bunPrice, actualPrice, 0);
     }
 }

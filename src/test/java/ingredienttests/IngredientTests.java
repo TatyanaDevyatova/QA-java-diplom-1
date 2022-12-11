@@ -1,4 +1,4 @@
-package ingredientTests;
+package ingredienttests;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,7 +24,7 @@ public class IngredientTests {
         String actualName = ingredient.getName();
 
         // Assert
-        assertEquals("Было получено: " + actualName + ", вместо: " + ingredientName, ingredientName, actualName);
+        assertEquals("Было получено неверное имя ингредиента", ingredientName, actualName);
     }
 
     @Test
@@ -33,6 +33,6 @@ public class IngredientTests {
         float actualPrice = ingredient.getPrice();
 
         // Assert
-        assertEquals("Было получено: " + actualPrice + ", вместо: " + ingredientPrice, ingredientPrice, actualPrice, 0);
+        assertEquals("Была получена невеная цена ингредиента", ingredientPrice, actualPrice, 0);
     }
 }
