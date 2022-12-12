@@ -21,8 +21,8 @@ public class IngredientTypeTests {
     @Parameterized.Parameters(name = "Тестовые данные: {0} | {1}")
     public static Object[][] getBunData() {
         return new Object[][]{
-                {IngredientType.FILLING, IngredientType.FILLING},
-                {IngredientType.SAUCE, IngredientType.SAUCE},
+                {IngredientType.FILLING, IngredientType.valueOf("FILLING")},
+                {IngredientType.SAUCE, IngredientType.valueOf("SAUCE")},
         };
     }
 
@@ -33,7 +33,6 @@ public class IngredientTypeTests {
         IngredientType actualType = ingredient.getType();
 
         // Assert
-        assertEquals("Было получено неверное строковое значение типа ингредиента", Enum.valueOf(IngredientType.class, expectedType.name()), actualType);
         assertEquals("Был получен неверный тип ингредиента", expectedType, actualType);
     }
 }
